@@ -1,0 +1,34 @@
+
+/* Landing page
+*********************************/
+.landing-link {
+	display: block;
+    height: 3.4em;
+    width: 25%;
+    font-size: 2em;
+    background-color: $color4;
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;
+    text-align: center;
+    padding: 0;
+    margin: 1em;
+    line-height: 2em;
+    border-radius: 0.1em;
+}
+
+.landing-link:hover {
+    color: #000;
+    background-color: $primary;
+}
+
+.landing-link svg {
+	width: 100%; height: 100%;
+	pointer-events: none; /* so that you can resize the element */
+}
+
+.landing-link text {
+	text-anchor: middle;
+	pointer-events: auto; /* Cancel the svg’s pointer-events */
+	fill: currentColor;
+}

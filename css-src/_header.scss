@@ -1,0 +1,16 @@
+
+/* Header styles
+**************************/
+
+nav li {
+    list-style: none;
+    display: inline-block;
+    margin: 0;
+    padding: 1em;
+    /* line-height: 1.1em; */
+}
+
+.header {
+    background-color: $color4;
+    background-image: url('/assets/img/pattern-svg.svg');
+}

@@ -1,0 +1,27 @@
+
+/* Primary Page Layout
+**************************/
+.main--flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.doc-tree {
+    /* shorthand for: flex-grow, flex-shrink, flex-basis*/
+    flex: 0 1 30em;
+    overflow-y: scroll;
+    height: 50em;
+}
+
+.doc-tree ul {
+    padding-left: 0;
+}
+
+.doc-preview {
+    flex: 1 1;
+    height: 50em;
+    padding: 0 0 0 1em;
+}

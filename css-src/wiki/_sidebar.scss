@@ -1,0 +1,86 @@
+$left-position: -1.75em;
+$top-adjustment: -1.25em;
+
+/* Sidebar (doc-tree)
+**************************/
+.doc-tree__topic {
+    display: inline-block;
+    width: 100%;
+    font-size: 2em;
+    line-height: 1.5em;
+    min-height: 1.5em;
+    font-weight: bold;
+
+    & svg {
+        display: inline-block;
+    }
+}
+
+/* these are the item lists beneath a topic */
+.doc-tree__topic ~ ul {
+    margin-left: 0;
+    margin-bottom: 1.5em;
+    padding-left:0;
+}
+
+.doc-tree__item {
+    display: inline-block;
+    text-align: left;
+    font-size: 1.25em;
+    line-height: 1.75em;
+    width: 100%;
+    margin-left: 0;
+    border-left: 3px solid $color4;
+}
+
+.doc-tree__item > button {
+    background: none;
+    border: none;
+}
+
+.doc-tree__item:hover {
+    background: $color4;
+}
+
+
+/* Wheelnav settings
+***********************************/
+.wheel-nav-container {
+    position: absolute;
+}
+
+.wheelnav {
+    position: absolute;
+    left: $left-position;
+    top: $top-adjustment;
+}
+
+.subsvg {
+    // display: inline-block;
+    position: absolute !important;
+    visibility: hidden;
+    opacity: 0;
+    top: $top-adjustment;
+    left: $left-position;
+    transition: all 0.3s;
+    display: block;
+    
+    &.show {
+        visibility: visible;
+        opacity: 1;
+        left: $left-position * 1.75;
+
+        &.editTopic,
+        &.saveTopic {
+            top: $top-adjustment - 1em;
+        }
+    
+        &.addFile {
+            top: $top-adjustment + 1em;
+        }
+    }
+
+    &.hide {
+        display: none !important;
+    }
+}

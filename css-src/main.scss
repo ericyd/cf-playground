@@ -1,0 +1,29 @@
+// COLORS: (light to dark)
+//========================
+$color1: #fcfbfd;
+$color2: #efedf5;
+$color3: #dadaeb;
+$color4: #bcbddc;
+$color5: #9e9ac8;
+$color6: #807dba;
+$color7: #6a51a3;
+$color8: #54278f;
+$color9: #3f007d;
+
+$primary: $color6;
+
+* {
+    font: inherit;
+}
+
+@import '../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss';
+@import 'icons';
+@import 'keyframes';
+@import 'spinner';
+@import 'header';
+@import 'wiki/sidebar';
+@import 'wiki/file-preview';
+@import 'accessibility';
+@import 'landing';
+@import 'layout';
+@import 'weather';

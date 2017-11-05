@@ -1,0 +1,18 @@
+
+/* Accessibility
+******************************/
+.screen-reader-only {
+    border: 0 !important;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px !important;
+    overflow: hidden;
+    padding: 0 !important;
+    position: absolute !important;
+    white-space: nowrap !important;
+    width: 1px !important;
+  }
+
+.displaynone {
+    display:none;
+}

@@ -1,0 +1,36 @@
+
+/* Icons
+**************************/
+
+.btn--icon {
+    background: 0;
+    border: 0;
+    position: relative;
+    top: 0.30em;
+    line-height: 1em;
+}
+
+.btn--icon:hover,
+.btn--icon:hover svg {
+    fill:  $primary;
+}
+/* 
+svg path {
+    fill: inherit;
+} */
+
+/* svg needs baseline adjustment*/
+.btn--icon  {
+    position: relative;
+    top: 0.1em;
+}
+
+.fileitem {
+    text-align: left;
+}
+
+.circle-icon {
+    &:hover .circle-icon__ring {
+        stroke: $primary;
+    }
+}
