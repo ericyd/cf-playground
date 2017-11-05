@@ -21,3 +21,7 @@ This code doesn't use any sort of framework or anything like that, and I'm sure 
 
 Pull requests will not be considered, just fork it and do your own thing.
 
+
+
+
+Also needs d3 and c3 installed for charts to work.

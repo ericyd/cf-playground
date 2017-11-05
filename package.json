@@ -1,0 +1,22 @@
+{
+  "name": "ROOT",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "gulp build-css",
+    "build": "gulp build",
+    "gulp:watch": "gulp watch",
+    "gulp:build": "npm run build",
+    "gulp:build-css": "npm run build:css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "bootstrap": "^3.3.7",
+    "bootstrap-sass": "^3.3.7",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0"
+  }
+}
