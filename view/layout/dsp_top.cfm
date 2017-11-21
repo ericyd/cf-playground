@@ -31,8 +31,8 @@
 				<link href="/assets/css/c3.min.css" rel="stylesheet">
 
 				<!-- Load d3.js and c3.js -->
-				<script src="/assets/js/d3/d3.js" charset="utf-8"></script>
-				<script src="/assets/js/c3/c3.js"></script>
+				<script src="/assets/js/d3/d3.min.js" charset="utf-8"></script>
+				<script src="/assets/js/c3/c3.min.js"></script>
 			</cfcase>
 			<cfdefaultcase></cfdefaultcase>
 		</cfswitch>
