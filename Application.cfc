@@ -7,6 +7,12 @@
 component {
 	this.name = "Lucee";
 	this.mappings["/other"]= GetDirectoryFromPath( GetCurrentTemplatePath() ) & "api";
+	this.datasources["sqltest"] = {
+		class: 'org.gjt.mm.mysql.Driver'
+		, connectionString: 'jdbc:mysql://localhost:3306/docs?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=round&tinyInt1isBit=true&autoReconnect=true&jdbcCompliantTruncation=true&useOldAliasMetadataBehavior=true&allowMultiQueries=true&useLegacyDatetimeCode=true'
+		, username: 'root'
+		, password: "encrypted:34cd36dca7785ea102ec84da4299ea789420a8f766a5752604b4b25a96e253dd"
+	}
 	// this.mappings["/layout"]= GetDirectoryFromPath( GetCurrentTemplatePath() ) & "view" & "layout";
 
 	public boolean function onApplicationStart() {
