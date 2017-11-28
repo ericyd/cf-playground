@@ -9,10 +9,10 @@ component {
 	this.mappings["/other"]= GetDirectoryFromPath( GetCurrentTemplatePath() ) & "api";
 	this.datasources["sqltest"] = {
 		class: 'org.gjt.mm.mysql.Driver'
-		, connectionString: 'jdbc:mysql://localhost:3306/docs?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=round&tinyInt1isBit=true&autoReconnect=true&jdbcCompliantTruncation=true&useOldAliasMetadataBehavior=true&allowMultiQueries=true&useLegacyDatetimeCode=true'
+		, connectionString: 'jdbc:mysql://localhost:3306/docs?useUnicode=true&characterEncoding=UTF-8&useLegacyDatetimeCode=true'
 		, username: 'root'
-		, password: "encrypted:34cd36dca7785ea102ec84da4299ea789420a8f766a5752604b4b25a96e253dd"
-	}
+		, password: "encrypted:ad19280193fbae4251cf85e2b2c8011317fccec63e827806b8dfd79d08477b63"
+	};
 	// this.mappings["/layout"]= GetDirectoryFromPath( GetCurrentTemplatePath() ) & "view" & "layout";
 
 	public boolean function onApplicationStart() {
