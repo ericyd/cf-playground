@@ -18,16 +18,16 @@ component {
 	public boolean function onApplicationStart() {
 		// application.file = new cfcs.file();
 		// application.api = new cfcs.apitest();
+		// If needed for testing, move these declarations to onRequestStart() so they are refreshed on every request
 		application.WEATHER_API_KEY = "f0af5f49d39b72ae6fa8f4c568c7976a";
+		application.file = new cfcs.file();
+		application.weather = new cfcs.weather();
 		return true;
 	}
 
 	public boolean function onRequestStart() {
-		// these should really go in onApplicationStart, but this is easier for testing because it will refresh on every request
 		// this.mappings["/test"]= GetDirectoryFromPath( GetCurrentTemplatePath() ) & "api";
 		// WriteDump(this.mappings)
-		application.file = new cfcs.file();
-		application.weather = new cfcs.weather();
 		// application.api = new api.test();
 		// WriteOutput(GetCurrentTemplatePath() )
 		// WriteOutput(GetDirectoryFromPath(GetCurrentTemplatePath() ))
