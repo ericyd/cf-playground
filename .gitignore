@@ -5,3 +5,6 @@ test-harnesses
 mxunit
 
 WEB-INF
+
+/assets/js/chess
+/assets/js/trello

@@ -6,6 +6,8 @@
   "scripts": {
     "build:css": "gulp build-css",
     "build": "gulp build",
+    "chess": "webpack --config webpack.config.chess.js",
+    "trello": "webpack --config webpack.config.trello.js",
     "gulp:watch": "gulp watch",
     "gulp:build": "npm run build",
     "gulp:build-css": "npm run build:css"
@@ -14,9 +16,20 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
     "bootstrap": "^3.3.7",
     "bootstrap-sass": "^3.3.7",
     "gulp": "^3.9.1",
-    "gulp-sass": "^3.1.0"
+    "gulp-sass": "^3.1.0",
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-dnd": "^2.5.4",
+    "react-dnd-html5-backend": "^2.5.4",
+    "react-dom": "^16.2.0",
+    "webpack": "^3.10.0",
+    "webpack-bundle-analyzer": "^2.9.2"
   }
 }

@@ -1,4 +1,15 @@
 component {
+    function init() {
+        var myArry = ['uno', 'dos', 'tres'];
+        for (var i = 1; i <= arrayLen(myArry); i++) {
+
+        }
+    }
+
+    private function generateFuncs(name) {
+        return function
+    }
+
     private struct function fileTreeReducer(struct all, struct item, number i) {
         all[item.id] = {
             "id": item.id,
