@@ -1,3 +1,9 @@
+/*
+ * Credit: https://medium.com/@adamrackis/vendor-and-code-splitting-in-webpack-2-6376358f1923
+ * (with modifications)
+ */
+
+
 var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 var path = require('path');
 var webpack = require('webpack');
