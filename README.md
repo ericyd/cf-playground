@@ -15,6 +15,15 @@ At time of writing,
 6. Run `startup.sh` on linux or `startup.bat` on Windows. These are located in the root of the lucee-express directory
 7. Navigate to [localhost:8888](http://localhost:8888) in your favorite web browser and you'll see the code!
 
+As an example, if you download and extract Lucee to your downloads folder, you would want to run something similar to these commands (this is assuming linux because who even knows the windows commands for all this)
+
+```
+cd ~/downloads/lucee-express-5.2.4.37/webapps
+mv ROOT ROOT-default
+git clone https://github.com/ericyd/cf-playground ROOT
+.././startup.sh
+```
+
 ## Code
 
 This code doesn't use any sort of framework or anything like that, and I'm sure it's quite ugly by CF standards, but it's more of a project repo than anything so I don't really care.
