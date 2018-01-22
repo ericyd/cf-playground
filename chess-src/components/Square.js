@@ -3,21 +3,21 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 export default class Square extends Component {
-  render() {
-    const { black } = this.props;
-	const fill = black ? 'black' : 'white';
-	const stroke = black ? 'white' : 'black';
+	render() {
+		const { black } = this.props;
+		const fill = black ? 'black' : 'white';
+		const stroke = black ? 'white' : 'black';
 
-    return (
-		<div style={{
-			backgroundColor: fill,
-			color: stroke,
-			width: '100%',
-			height: '100%',
-			display: 'block'
-		}} >
-			{this.props.children}
-		</div>
+		return (
+			<div style={{
+				backgroundColor: fill,
+				color: stroke,
+				width: '100%',
+				height: '100%',
+				display: 'block'
+			}} >
+				{this.props.children}
+			</div>
 	);
   }
 }

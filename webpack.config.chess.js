@@ -24,7 +24,7 @@ module.exports = {
     },
     resolve: {
         modules: [
-            path.resolve('./'),
+            path.resolve('./chess-src'),
             path.resolve('./node_modules'),
         ]
     },
