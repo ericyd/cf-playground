@@ -1,4 +1,10 @@
 <cfcomponent output = "false" hint = "handles crud operations for files">
+
+    <cffunction name = "init"  hint = "initializes file thingy">
+        <cfargument name="datasource" type="any" required="yes" hint="datasource for queries">
+        <cfset variables.dsn = arguments.datasource />
+        <cfreturn this />
+    </cffunction>
     
     <!--- 
     This is the old function that was used before I updated to AJAX. It relies on traditional form submission
@@ -25,7 +31,7 @@
         <cfset myArguments = deserializeJSON(ToString(getHTTPRequestData().content))>
 
         <cftry>
-            <cfquery result = "insertFile" datasource = "sqltest">
+            <cfquery result = "insertFile" datasource = "#variables.dsn#">
                 insert into file (title, parent_id, content, date_created, date_modified)
                 values(
                     <cfqueryparam value="#myArguments.title#" cfsqltype="cf_sql_varchar"  />,
@@ -61,7 +67,7 @@
         --------------------------------------------------------------------------------------------------- --->
         <cfset myArguments = deserializeJSON(ToString(getHTTPRequestData().content))>
         
-        <cfquery name = "updateFile" datasource = "sqltest">
+        <cfquery name = "updateFile" datasource = "#variables.dsn#">
             update file
             set title = <cfqueryparam value="#myArguments.title#" cfsqltype="cf_sql_varchar"  />,
             content = <cfqueryparam value="#myArguments.content#" cfsqltype="cf_sql_varchar"  />,
@@ -77,7 +83,7 @@
     <cffunction name = "addTopic" returnType = "void" roles = "public" access = "remote" displayName = "addTopic" hint = "adds a topic">
         <cfargument name="title" required="yes" type="string"/>
 
-        <cfquery name = "insertFile" datasource = "sqltest">
+        <cfquery name = "insertFile" datasource = "#variables.dsn#">
             insert into file (title, parent_id, content, date_created, date_modified)
             values(
                 <cfqueryparam value="#title#" cfsqltype="cf_sql_varchar"  />,
@@ -105,7 +111,7 @@
         <cfset myArguments = deserializeJSON(ToString(getHTTPRequestData().content))>
         
         <cftry>
-            <cfquery name = "updateFile" datasource = "sqltest">
+            <cfquery name = "updateFile" datasource = "#variables.dsn#">
                 update file
                 set title = <cfqueryparam value="#myArguments.title#" cfsqltype="cf_sql_varchar"  />
                 where id = <cfqueryparam value="#myArguments.fileID#" cfsqltype="cf_sql_integer"  />
@@ -124,7 +130,7 @@
     <!--- This is just a tag-based implementation of /test.cfc?method=listFiles --->
     <cffunction name = "fileTreeReducer" returnType = "array" access = "private" hint = "helper function to reduce a query into a struct with the correct values">
         <!--- OLD: <cfargument name="all" type="array" required="no" hint="the cumulative reducer object"> --->
-        <cfargument name="all" type="array" required="no" default = "#ArrayNew()#" hint="the cumulative reducer object">
+        <cfargument name="all" type="array" required="no" default = "#ArrayNew(1)#" hint="the cumulative reducer object">
         <cfargument name="item" type="any" required="yes" hint="the current item">
         <cfargument name="i" type="number" required="yes" hint="the index">
         <!--- 
@@ -157,11 +163,11 @@
     </cffunction>
 
 
+    <!--- cffunction --->
 
-
-    <cffunction name = "getFiles" returnType = "query" roles = "public" access = "remote" displayName = "getFiles" hint = "get all files">
+    <cffunction name = "getFiles" returnType = "query" <!--- roles = "public" ---> access = "remote" displayName = "getFiles" hint = "get all files">
         <cfargument name="parentID" type="number" required="no" displayname="parentID" hint="ID of parent">
-        <cfquery name = "topics" datasource = "sqltest">
+        <cfquery name = "topics" datasource = "#variables.dsn#">
             select *
             from file
             <cfif StructKeyExists(arguments, "parentID")>
@@ -180,7 +186,7 @@
 
 
     <cffunction name = "methodForTesting" returnType = "string" roles = "public" access = "public" hint = "this is not used in the app, just for mxunit testing">
-        <cfreturn "this is my test return string">
+        <cfreturn "this is my test return string" />
     </cffunction>
 
 </cfcomponent>

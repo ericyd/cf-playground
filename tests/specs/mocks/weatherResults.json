@@ -1,0 +1,45 @@
+{
+	"coord": {
+		"lon": -122.69,
+		"lat": 45.52
+	},
+	"wind": {
+		"speed": 4.7,
+		"deg": 180
+	},
+	"dt": 1517936160,
+	"visibility": 1609,
+	"weather": [{
+		"description": "mist",
+		"main": "Mist",
+		"id": 701,
+		"icon": "50d"
+	}, {
+		"description": "fog",
+		"main": "Fog",
+		"id": 741,
+		"icon": "50d"
+	}],
+	"clouds": {
+		"all": 90
+	},
+	"cod": 200,
+	"main": {
+		"temp_max": 44.6,
+		"pressure": 1029,
+		"temp": 41.68,
+		"humidity": 93,
+		"temp_min": 37.4
+	},
+	"id": 0,
+	"sys": {
+		"message": 0.0036,
+		"sunset": 1517966761,
+		"country": "US",
+		"sunrise": 1517930661,
+		"id": 2274,
+		"type": 1
+	},
+	"base": "stations",
+	"name": "Portland"
+}

@@ -3,40 +3,56 @@
 <cfinclude template = "view/layout/dsp_top.cfm">
 
 <cfsilent>
-	<cfset links = [
-		'Wiki',
-		'Charts',
-		'Chess',
-		'Trello'
-	]>
+	<cfset variables.links = [
+		{
+			"name" = "Wiki",
+			"href" = "wiki"
+		},
+		{
+			"name" = "Charts",
+			"href" = "charts"
+		},
+		{
+			"name" = "Chess",
+			"href" = "chess"
+		},
+		{
+			"name" = "Trello",
+			"href" = "trello"
+		},
+		{
+			"name" = "tests",
+			"href" = "tests/runner.cfm"
+		}
+	] />
 
 	
 	<cffunction name = "makeLink" returnType = "string" access = "public" description = "generate the html for a link">
-		<cfargument name="linkName" type="string" required="true" hint="Name for the link (href is just lowercased)">
+		<cfargument name="link" type="struct" required="true" hint="Link details including `name` and `href` keys">
 
 		<cfsetting enablecfoutputonly="true">
 			<cfsavecontent variable = "local.html" >
 				<cfoutput>
-					<a href="#lcase(arguments.linkName)#" class="landing-link">
-						<svg><text x="50%" y="50%" dy=".3em">#arguments.linkName#</text></svg>
+					<a href="#lcase(arguments.link.href)#" class="landing-link">
+						<svg><text x="50%" y="50%" dy=".3em">#arguments.link.name#</text></svg>
 					</a>
 				</cfoutput>
 			</cfsavecontent>
 		</cfsetting>
-		<cfreturn local.html>
+		<cfreturn local.html />
 	</cffunction>
 
 	
 	<cffunction name = "generateLinks" returnType = "string" access = "public" description = "generate the html for all links">
 		<cfsilent>
 			<cfset local.myLinks = "">
-			<cfloop collection = "#links#" index = "local.i">
-				<cfset link = makeLink(links[local.i]) />
+			<cfloop array = "#links#" index = "local.i">
+				<cfset var link = makeLink(local.i) />
 				<cfset local.myLinks &= link />
 			</cfloop>
 		</cfsilent>
 		
-		<cfreturn local.myLinks>
+		<cfreturn local.myLinks />
 	</cffunction>
 
 </cfsilent>
@@ -47,6 +63,5 @@
 		#allLinks#
 	</cfoutput>
 </main>
-
 
 <cfinclude template = "view/layout/dsp_bottom.cfm">

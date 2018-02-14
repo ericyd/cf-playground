@@ -10,7 +10,9 @@
     "trello": "webpack --config webpack.config.trello.js",
     "gulp:watch": "gulp watch",
     "gulp:build": "npm run build",
-    "gulp:build-css": "npm run build:css"
+    "gulp:build-css": "npm run build:css",
+    "gen-report": "marge test-results.json",
+    "test": "mocha \"tests/js/**/*.js\" "
   },
   "keywords": [],
   "author": "",
@@ -22,8 +24,12 @@
     "babel-preset-react": "^6.24.1",
     "bootstrap": "^3.3.7",
     "bootstrap-sass": "^3.3.7",
+    "chai": "^4.1.2",
+    "cheerio": "^1.0.0-rc.2",
     "gulp": "^3.9.1",
     "gulp-sass": "^3.1.0",
+    "mocha": "^5.0.1",
+    "mochawesome-report-generator": "^3.1.1",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dnd": "^2.5.4",

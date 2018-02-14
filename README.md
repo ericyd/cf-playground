@@ -34,3 +34,37 @@ Pull requests will not be considered, just fork it and do your own thing.
 
 
 Also needs d3 and c3 installed for charts to work.
+
+
+
+
+
+## Testbox
+
+### Installation
+
+Looking into using [Commandbox](https://www.ortussolutions.com/products/commandbox) and [Testbox](https://testbox.ortusbooks.com/content/)
+
+Once downloaded and extracted, make sure the executable is on your PATH
+
+Install textbox: `box install testbox`
+
+
+
+### Usage
+
+Once you're in your directory, run `box` to start the CLI
+
+Some useful commands
+
+* Start local server: `start cfengine=adobe@11`
+* Stop local server: `stop` (this is directory-specific)
+* Run tests (must have local server running): `testbox run "http://localhost:8080/tests/runner.cfm"`
+
+
+### Notes
+
+* in order to access application scope from main app, you need to extend the main application.cfc from the application.cfc within testbox/tests and the call super.onRequestStart() or any other methods you need in that application.cfc
+* to get to admin, go to <http://localhost:51879/CFIDE/administrator/index.cfm> and password is `commandbox`
+* in `box.json`, the testbox default runner is set, so you can just run `testbox run` to run the tests
+* add mapping to `/testbox` in application.cfc

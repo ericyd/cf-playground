@@ -54,22 +54,22 @@ console.log('required offset (assuming 100x100 viewbox): ', 100 - x, 100 - y)
 <cfscript>
 viewbox = 100;
 r = 55; // radius
-x1 = 30
+x1 = 30;
 dx = 20;
-y1 = 30
+y1 = 30;
 dy = -20;
-x2 = x1 + dx
-y2 = y1 + dy
+x2 = x1 + dx;
+y2 = y1 + dy;
 
 
-q = ((x2-x1)^2 + (y2-y1)^2)^(1/2)
-x3 = (x1+x2)/2
-y3 = (y1+y2)/2
+q = ((x2-x1)^2 + (y2-y1)^2)^(1/2);
+x3 = (x1+x2)/2;
+y3 = (y1+y2)/2;
 
 // first circle:
 
-x = x3 + ((r^2-(q/2)^2)^(1/2))*(y1-y2)/q
-y = y3 + ((r^2-(q/2)^2)^(1/2))*(x2-x1)/q  
+x = x3 + ((r^2-(q/2)^2)^(1/2))*(y1-y2)/q;
+y = y3 + ((r^2-(q/2)^2)^(1/2))*(x2-x1)/q;
 
 // Second Circle:
 // x = x3 - (r^2-(q/2)^2)^(1/2)*(y1-y2)/q
