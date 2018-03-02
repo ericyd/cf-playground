@@ -66,11 +66,11 @@ function callWeather(zip, cb, method) {
 }
 
 function getForecast(zip, cb) {
-    return callWeather(zip, cb, 'getForecast');
+    return callWeather(zip, cb, 'getForecastRemote');
 }
 
 function getWeather(zip, cb) {
-    return callWeather(zip, cb, 'getCurrentWeather');
+    return callWeather(zip, cb, 'getWeatherRemote');
 }
 
 

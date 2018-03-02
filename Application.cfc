@@ -19,14 +19,14 @@ component {
 		// application.file = new cfcs.file();
 		// application.api = new cfcs.apitest();
 		// If needed for testing, move these declarations to onRequestStart() so they are refreshed on every request
-		application.file = new cfcs.file(datasource = "sqltest");
-		application.weather = new cfcs.weather();
 		return true;
 	}
 
 	public boolean function onRequestStart() {
+		application.weather_old = new cfcs.weather_old();
+		application.file = new cfcs.file(datasource = "sqltest");
 		application.WEATHER_API_KEY = "f0af5f49d39b72ae6fa8f4c568c7976a";
-		application.weather2 = new cfcs.weather2(apikey = application.WEATHER_API_KEY);
+		application.weather = new cfcs.weather(apikey = application.WEATHER_API_KEY);
 		// this.mappings["/test"]= GetDirectoryFromPath( GetCurrentTemplatePath() ) & "api";
 		// WriteDump(this.mappings)
 		// application.api = new api.test();

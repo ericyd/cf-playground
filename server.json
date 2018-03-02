@@ -1,6 +1,6 @@
 {
     "app":{
-        "cfengine":"adobe@10.0.12"
+        "cfengine":"lucee"
     },
     "engine":"adobe@11"
 }

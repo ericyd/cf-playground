@@ -21,12 +21,12 @@ This is just for testing
         <span id="cityName">Portland, US</span><span id="spinner"><cfinclude template = "/icons/spinner.cfm"></span>&nbsp;
         <form id="zipForm" class="inline-form">
             <span id="zipCode" data-raw="97205" data-editable>97205</span>
+            <button class="saveFile btn--icon" type="submit">
+                <cfinclude template = "/icons/iconmonstr-save-2.svg">
+            </button>
         </form>
         <button class="editFile btn--icon">
             <cfinclude template = "/icons/iconmonstr-edit-6.svg">
-        </button>
-        <button class="saveFile btn--icon">
-            <cfinclude template = "/icons/iconmonstr-save-2.svg">
         </button>
     </h2>
     <h3>Current weather: <span id="currentWeather">?</span></h3>
